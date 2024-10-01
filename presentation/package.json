@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "build-html": "marp deck.md -o index.html",
+    "build-pdf": "marp deck.md -o deck.pdf",
+    "dev": "marp -w deck.md",
+    "start": "marp -w deck.md"
+  },
+  "devDependencies": {
+    "@marp-team/marp-cli": "^3.4.0"
+  }
+}
