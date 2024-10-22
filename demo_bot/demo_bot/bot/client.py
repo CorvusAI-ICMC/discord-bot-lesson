@@ -12,7 +12,7 @@ logger = logging.getLogger(__name__)
 
 
 def prefix_finder(bot: Bot, _: discord.Message) -> str:
-    return "!bruh "
+    return "!cmd "
 
 
 class TheBot(Bot):
