@@ -1,25 +1,16 @@
 import os
 import logging
-
 import dotenv
-import discord
-
-from bot import run_bot_explicit
-
+from Google import run_bot  # Importa a função run_bot do Google.py
 
 logger = logging.getLogger(__name__)
 
 DISCORD_TOKEN_ENV = "DISCORD_TOKEN"
 
-
 def setup_logging() -> None:
     log_format = "[%(asctime)s] [%(process)d] [%(levelname)s] %(message)s"
     date_format = "%Y-%m-%d %H:%M:%S %z"
-    discord.utils.setup_logging(
-        level=logging.INFO,
-        formatter=logging.Formatter(fmt=log_format, datefmt=date_format),
-    )
-
+    logging.basicConfig(level=logging.INFO, format=log_format, datefmt=date_format)
 
 def main() -> None:
     """Entrypoint for the bot"""
@@ -38,4 +29,6 @@ def main() -> None:
 
     logger.info(f'Token found in environment, token="...{disc_token[-3:]}"')
 
-    run_bot_explicit(disc_token)
+    run_bot(disc_token)  # Chama a função para iniciar o bot
+
+
