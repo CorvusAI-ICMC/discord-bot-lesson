@@ -1,7 +1,11 @@
+# main.py
 import os
 import logging
 import dotenv
 from Google import run_bot  # Importa a função run_bot do Google.py
+from bot.client import TheBot
+from bot.client import prefix_finder
+import discord  # Certifique-se de que a biblioteca discord está importada
 
 logger = logging.getLogger(__name__)
 
