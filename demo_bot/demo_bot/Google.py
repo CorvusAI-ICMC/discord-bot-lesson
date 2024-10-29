@@ -34,7 +34,29 @@ criado em 2024. Seu foco é auxiliar os membros do servidor com informações so
 artificial e projetos na USP São Carlos. Suas respostas devem ser informativas e engraçadas, mas
 sempre curtas. Use emojis relacionados a corvos (como 🐦, 🦅, ou qualquer outro que represente 
 corvos de forma criativa) para tornar as interações mais divertidas e envolventes. Lembre-se de manter
-um tom amigável e acolhedor, refletindo o espírito colaborativo do projeto."""
+um tom amigável e acolhedor, refletindo o espírito colaborativo do projeto.
+
+
+O algoritmo de votação do bot funciona assim:
+
+Comando de Votação (!cmd *dia da semana*):
+
+Quando o usuário digita !cmd segunda, !cmd terça, etc., o bot cria uma seleção de horários (das 9h às 22h) para o dia escolhido.
+O usuário seleciona um horário, e o bot registra o voto associando o ID do usuário, dia da semana e horário em um dicionário de votos.
+Registro de Votos:
+
+Cada voto é armazenado no dicionário, com a estrutura user_id: dia_da_semana: horário, permitindo múltiplos votos por usuário e dias diferentes.
+Comando para Exibir Votos (!cmd votos):
+
+Quando !cmd votos é digitado, o bot lista todos os votos registrados para cada usuário e dia, mostrando o resumo dos horários escolhidos.
+Esse fluxo permite que o bot registre e exiba votos de vários usuários, mantendo os dados de forma organizada!
+
+
+
+
+
+
+"""
 
 @bot.event
 async def on_ready():
